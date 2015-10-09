@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" ng-app="MainApp" ng-controller="MainController">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>{{title}}</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+	<link rel="stylesheet" href="css/pb.css"> <!-- custom styles -->
+
+	<!-- JS -->
+	<script src="libs/jquery/dist/jquery.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular-route/angular-route.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+	
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/angularApp.js"></script>
+	
+</head>
+<body>
+
+	
+	<!-- HEADER -->
+
+	 <nav id="topMenu" class="navbar navbar-inverse navbar-fixed-top">
+      
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">TitanSmite</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{ active: $route.current.activetab == 'home' }"><a href="/">Home</a></li>
+            <li ng-class="{ active: $route.current.activetab == 'pb' }"><a href="/pb">P&B's</a></li>     
+          </ul>
+          <ul class="nav navbar-nav nav-pills navbar-right">
+            <li><a href="/logout"> Log Out &nbsp;</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      
+    </nav>
+
+
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div id="content"><div class='view' ng-view></div></div>
+
+<script src="js/resize.js"></script>
+
+
+
+</body>
+</html>

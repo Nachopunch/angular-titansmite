@@ -1,0 +1,401 @@
+html{
+	overflow:auto;
+}
+p{
+	margin:0;
+
+}
+body {
+  margin: auto;
+  position:fixed;
+  overflow:auto;
+}
+
+.pointer-hover:hover{
+	cursor:pointer;
+}
+
+.btn {
+	margin:0;
+	padding:0;
+	border-radius:.5em;
+	border:.1em solid black;
+}
+
+.window {
+	border: .2em solid rgba(10,25,25,.7);
+	border-radius:.2em;
+	border-bottom:.2em solid rgb(120,130,140);
+	color:rgb(180,180,180);
+}
+
+.button {
+	border: .5em outset gray;
+	border-radius:.5em;
+}
+
+.button:active{
+	border-style:inset;
+}
+
+#content{
+	position:relative;
+	top:50px;
+	height:500px;
+	width:950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pbColumn{
+	height:100%;
+	background-color:rgba(30,40,55,.8);
+	display:inline-block;
+	float:left;
+	padding-left:1%;
+	padding-right:1%;
+	border:.2em solid #2D3B4A;
+}
+
+#leftTeamColumn{
+	width:18%;
+}
+
+#rightTeamColumn{
+	width:18%;
+}
+
+#middleColumn {
+	width:44%;
+	border-left:0;
+	border-right:0;
+}
+
+.pickBox{
+	height:14.7%;
+	width:100%;
+	margin-top:5%;
+	border-radius: 1em;
+	background-color:rgba(0,0,0,.2);
+	overflow:hidden;
+	transition: all linear 0.3s;
+
+}
+.pickBox img{
+	height:100%;
+	border:none;
+}
+
+.banIcon{
+	position:relative;
+	border-radius:1em;
+	margin-left:1%;
+	margin-right:1%;
+	top:15%;
+	display:inline-block;
+	height:70%;
+	width:30%;
+	overflow:hidden;
+	transition: all linear 0.3s;
+}
+
+.unavailable{
+	opacity: .2;
+}
+
+
+
+.banIcon img{
+	height:100%;
+	width:100%;
+	border-radius:1em;
+}
+
+.leftPickBox, .leftBanIcon{
+	background-color: rgba(30,40,110,.5);
+}
+.rightPickBox, .rightBanIcon{
+	background-color: rgba(80,30,30, .5);
+}
+.nextPick {
+	-moz-box-shadow:0px 0px 20px yellow;
+	-webkit-box-shadow:0px 0px 20px yellow;
+	box-shadow:0px 0px 20px yellow;
+	background-color:darkgreen;
+}
+
+
+#statusWindow{
+	position:relative;
+	width:100%;
+	height:28%;
+	top: 2%;
+	background-color:rgba(0,0,0,.2);
+	text-align: center;
+	font-size:1em;
+	color:white;
+	font-family: Arial;
+
+}
+
+.message{
+	text-align:center;
+	font-size:2em;
+}
+
+#godsWindow{
+	width:100%;
+	height:55%;
+	margin-top:4%;
+	padding:1%;
+	overflow-y:scroll;
+	background-color:rgba(0,0,0,.3);
+}
+
+.godBox{
+	display:inline-block;
+	margin:3px;
+	width:78px;
+	height:78px;
+	background-color:gray;
+	border: 5px outset gray;
+	border-radius:5px;
+	transition: all linear 0.2s;;
+}
+.godBox:hover{
+	cursor:pointer;
+}
+.selected {
+	border-color: yellow;
+}
+
+.godBox img {
+	width:100%;
+	height:100%;
+	opacity:1;
+}
+
+#buttonWindow{
+	height:10%;
+	width:100%;
+	margin-top:2%;
+	background-color:rgba(0,0,0,.2);
+}
+
+.boxTitle{
+	height:25%;
+	font: 3em "Josefin", sans-serif;
+	color:rgb(180,180,180);
+
+	border-radius:3px;
+	padding-left:3%;
+	border-bottom:.1em solid rgb(120,130,140);
+}
+
+#settingsColumn{
+	width:20%;
+	border-left:0;
+}
+
+#lockButton {
+	position:relative;
+	top:10%;
+	left:10%;
+	height:80%;
+	width:20%;
+	margin:auto;
+	font-size: 2em;
+}
+
+#resetButton{
+	position:relative;
+	top:20%;
+	height:60%;
+	width:15%;
+	float:right;
+	font-size: 2em;
+}
+
+#undoButton{
+	position:relative;
+	top:20%;
+	height:60%;
+	width:15%;
+	float:left;
+	font-size: 2em;
+}
+#redoButton{
+	position:relative;
+	top:20%;
+	height:60%;
+	width:15%;
+	float:left;
+	font-size: 2em;
+}
+
+
+#notesWindow{
+	width:100%;
+	height:60%;
+	margin:auto;
+	margin-top:5%;
+	background-color:rgba(0,0,0,.3);
+}
+#saveButton{
+	margin-top:5%;
+	height:8%;
+	width:40%;
+	font-size:2em;
+}
+#loadButton{
+	margin-top:5%;
+	height:8%;
+	width:40%;
+	float:right;
+	font-size:2em;
+}
+#notesName{
+	height:7%;
+	font-size:2em;
+}
+#notesInput{
+	background-color:rgba(0,0,0,0);
+	min-width:100%;
+	min-height:90%;
+	max-width:100%;
+	max-height:90%;
+	border-radius: 3px;
+	border:none;
+	color:rgb(180,180,180);
+	font-size: 1.8em
+}
+#draftName{
+	margin-top:5%;
+	font-size:2em;
+	background-color:rgba(0,0,0,.3);
+}
+#draftNameInput{
+	width:100%;
+	font-size: 2.5em
+}
+#collectionName{
+	margin-top:5%;;
+	font-size:2em;
+	background-color:rgba(0,0,0,.3);
+}
+#collectionInput{
+	width:100%;
+	height:2em;
+	font-size: 2em
+}
+#collectionAddButton{
+	display:inline-block;
+	float:right;
+	width: 35%;
+	font-size: .9em;
+}
+#viewSavesWindow{
+	color:white;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,.7);
+	overflow:auto;
+}
+#viewSavesHeader{
+	font-family:Arial;
+	margin:auto;
+	text-align: center;
+}
+#saveSelectorWindow{
+	margin: auto;
+	width:80%;
+	height:80%;
+}
+#saveSelectorWindow li{
+	display:inline-block;
+	float:top;
+}
+.saveIcon{
+	border-radius:5px;
+	display:inline-block;
+	padding:5px;
+	margin:10px;
+	vertical-align:middle;
+	height:280px;
+	width:200px;
+	background-color:rgba(150,150,150,.9);
+}
+.deleteSaveButton{
+	background-color:rgb(120,120,120);
+	padding:1%;
+	float:right;
+	font-size:16px;
+}
+/*
+#middleColumn{
+	float:left;
+}*/
+
+/*#rightTeamColumn{
+	float:left;
+	display:block;
+}*/
+/*
+#leftTeamColumn{
+	float:right;
+}*/
+
+#viewSavesWindow select{
+	width:200px;
+}
+
+.saveIconTitle{
+	font-family: Arial;
+	color:white;
+	font-size:18px;
+	height:40px;
+	background-color:rgb(80,80,80);
+}
+
+.saveIconBans{
+	display:inline-block;
+	margin-top:2%;
+	height:25px;
+}
+.saveIconBans img{
+	position:relative;
+	height:100%;
+	margin:auto;
+}
+
+.saveIconPicks{
+	margin-top:5%;
+	display:inline-block;
+	width:45%;
+	height:70%;
+}
+
+.saveIconPicks img{
+	height:18%;
+}
+#saveIconPicksRight{
+	float:right;
+}
+#saveIconPicksLeft{
+	float:left;
+}
+
+#filterBox {
+	font-size:2em;
+}
+#filterBox select, 
+#filterBox input,
+#filterBox select option {
+	background-color:rgb(0,0,0);
+}
+
+#filterBox select{
+}

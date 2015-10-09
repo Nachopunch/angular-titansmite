@@ -1,0 +1,51 @@
+*{
+	margin:0;
+	padding:0;
+  box-sizing: border-box;
+}
+body, div, nav{
+ /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+ 
+}
+body{
+	height:100%;
+	width:100%;
+	font-size:100%;
+  	border:100%;
+	background: url('/images/bg-titansmite.png') center top fixed;
+	background-size:cover;
+}
+
+a {
+  color: #00B7FF;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+.btn p{
+  position:relative;
+  top:50%;
+  transform: translateY(-50%);
+}
+#topMenu {
+	background-color:rgb(15,25,50);
+	font-size:1.4em;
+}
+
+.view{
+  width:100%;
+  height:100%;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}

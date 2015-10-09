@@ -1,0 +1,26 @@
+{
+  "name": "titansmitetest",
+  "version": "0.0.0",
+  "authors": [
+    "Joey Bunger <jjlbunger@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "bootstrap": "latest",
+    "font-awesome": "~4.4.0",
+    "jquery": "latest",
+    "socket.io": "~1.3.7"
+  }
+}

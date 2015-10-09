@@ -1,0 +1,410 @@
+[
+    {
+      "name": "Agni",
+      "shortname": "agni",
+      "class": "Mage",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Ah Muzen Cab",
+      "shortname": "ah_muzen_cab",
+      "class": "Hunter",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Ah Puch",
+      "shortname": "ah_puch",
+      "class": "Mage",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Anhur",
+      "shortname": "anhur",
+      "class": "Hunter",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Anubis",
+      "shortname": "anubis",
+      "class": "Mage",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Ao Kuang",
+      "shortname": "ao_kuang",
+      "class": "Mage",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Aphrodite",
+      "shortname": "aphrodite",
+      "class": "Mage",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Apollo",
+      "shortname": "apollo",
+      "class": "Hunter",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Arachne",
+      "shortname": "arachne",
+      "class": "Assasin",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Ares",
+      "shortname": "ares",
+      "class": "Guardian",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Artemis",
+      "shortname": "artemis",
+      "class": "Hunter",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Athena",
+      "shortname": "athena",
+      "class": "Guardian",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Awilix",
+      "shortname": "awilix",
+      "class": "Assasin",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Bacchus",
+      "shortname": "bacchus",
+      "class": "Guardian",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Bakasura",
+      "shortname": "bakasura",
+      "class": "Assasin",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Bastet",
+      "shortname": "bastet",
+      "class": "Assasin",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Bellona",
+      "shortname": "bellona",
+      "class": "Warrior",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Cabrakan",
+      "shortname": "cabrakan",
+      "class": "Guardian",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Chaac",
+      "shortname": "chaac",
+      "class": "Warrior",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Chang'e",
+      "shortname": "change",
+      "class": "Mage",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Chronos",
+      "shortname": "chronos",
+      "class": "Mage",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Cupid",
+      "shortname": "cupid",
+      "class": "Hunter",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Fenrir",
+      "shortname": "fenrir",
+      "class": "Assasin",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Freya",
+      "shortname": "freya",
+      "class": "Mage",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Geb",
+      "shortname": "geb",
+      "class": "Guardian",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Guan Yu",
+      "shortname": "guan_yu",
+      "class": "Warrior",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Hades",
+      "shortname": "hades",
+      "class": "Guardian",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "He Bo",
+      "shortname": "he_bo",
+      "class": "Mage",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Hel",
+      "shortname": "hel",
+      "class": "Mage",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Hercules",
+      "shortname": "hercules",
+      "class": "Warrior",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Hou Yi",
+      "shortname": "hou_yi",
+      "class": "Hunter",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Hun Batz",
+      "shortname": "hun_batz",
+      "class": "Assasin",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Isis",
+      "shortname": "isis",
+      "class": "Mage",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Janus",
+      "shortname": "janus",
+      "class": "Mage",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Kali",
+      "shortname": "kali",
+      "class": "Assasin",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Khepri",
+      "shortname": "khepri",
+      "class": "Guardian",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Kulkulkan",
+      "shortname": "kulkulkan",
+      "class": "Mage",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Kumbhakarna",
+      "shortname": "kumbhakarna",
+      "class": "Guardian",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Loki",
+      "shortname": "loki",
+      "class": "Assasin",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Medusa",
+      "shortname": "medusa",
+      "class": "Hunter",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Mercury",
+      "shortname": "mercury",
+      "class": "Assasin",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Ne Zha",
+      "shortname": "ne_zha",
+      "class": "Assasin",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Neith",
+      "shortname": "neith",
+      "class": "Hunter",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Nemesis",
+      "shortname": "nemesis",
+      "class": "Assasin",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Nox",
+      "shortname": "nox",
+      "class": "Assasin",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Nu Wa",
+      "shortname": "nu_wa",
+      "class": "Mage",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Odin",
+      "shortname": "odin",
+      "class": "Warrior",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Osiris",
+      "shortname": "osiris",
+      "class": "Warrior",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Poseidon",
+      "shortname": "poseidon",
+      "class": "Mage",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Ra",
+      "shortname": "ra",
+      "class": "Mage",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Rama",
+      "shortname": "rama",
+      "class": "Hunter",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Ratatoskr",
+      "shortname": "ratatoskr",
+      "class": "Assasin",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Ravana",
+      "shortname": "ravana",
+      "class": "Warrior",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Scylla",
+      "shortname": "scylla",
+      "class": "Mage",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Serqet",
+      "shortname": "serqet",
+      "class": "Assasin",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Sobek",
+      "shortname": "sobek",
+      "class": "Guardian",
+      "pantheon": "Egyptian"
+    },
+    {
+      "name": "Sun Wukong",
+      "shortname": "sun_wukong",
+      "class": "Warrior",
+      "pantheon": "Chinese"
+    },
+    {
+      "name": "Sylvanus",
+      "shortname": "sylvanus",
+      "class": "Guardian",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Thanatos",
+      "shortname": "thanatos",
+      "class": "Assasin",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Thor",
+      "shortname": "thor",
+      "class": "Assasin",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Tyr",
+      "shortname": "tyr",
+      "class": "Warrior",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Ullr",
+      "shortname": "ullr",
+      "class": "Hunter",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Vamana",
+      "shortname": "vamana",
+      "class": "Warrior",
+      "pantheon": "Hindu"
+    },
+    {
+      "name": "Vulcan",
+      "shortname": "vulcan",
+      "class": "Mage",
+      "pantheon": "Roman"
+    },
+    {
+      "name": "Xbalanque",
+      "shortname": "xbalanque",
+      "class": "Hunter",
+      "pantheon": "Mayan"
+    },
+    {
+      "name": "Ymir",
+      "shortname": "ymir",
+      "class": "Guardian",
+      "pantheon": "Norse"
+    },
+    {
+      "name": "Zeus",
+      "shortname": "zeus",
+      "class": "Mage",
+      "pantheon": "Greek"
+    },
+    {
+      "name": "Zhong Kui",
+      "shortname": "zhong_kui",
+      "class": "Mage",
+      "pantheon": "Chinese"
+    }
+  ]

@@ -1,0 +1,118 @@
+<div class="pbColumn noselect" id="leftTeamColumn">
+  <div class="window pickBox" id="leftBanBox">
+    <div class="window banIcon leftBanIcon" id="pick0" ng-class="{nextPick: phase == 0}"><img ng-src="images/godicons/{{picks[0]}}.png" ng-show="phase > 0"></div>
+    <div class="window banIcon leftBanIcon" id="pick2" ng-class="{nextPick: phase == 2}"><img ng-src="images/godicons/{{picks[2]}}.png" ng-show="phase > 2"></div>
+    <div class="window banIcon leftBanIcon" id="pick11" ng-class="{nextPick: phase == 11}"><img ng-src="images/godicons/{{picks[11]}}.png" ng-show="phase > 11"></div>
+  </div>
+  <div id="pick4" class="window pickBox leftPickBox" ng-class="{nextPick: phase == 4}"><img ng-src="images/widegodicons/W{{picks[4]}}.png" ng-show="phase > 4"></div>
+  <div id="pick7" class="window pickBox leftPickBox" ng-class="{nextPick: phase == 7}"><img ng-src="images/widegodicons/W{{picks[7]}}.png" ng-show="phase > 7"></div>
+  <div id="pick8" class="window pickBox leftPickBox" ng-class="{nextPick: phase == 8}"><img ng-src="images/widegodicons/W{{picks[8]}}.png" ng-show="phase > 8"></div>
+  <div id="pick13" class="window pickBox leftPickBox" ng-class="{nextPick: phase == 13}"><img ng-src="images/widegodicons/W{{picks[13]}}.png" ng-show="phase > 13"></div>
+  <div id="pick14" class="window pickBox leftPickBox" ng-class="{nextPick: phase == 14}"><img ng-src="images/widegodicons/W{{picks[14]}}.png" ng-show="phase > 14"></div>
+
+</div>  <!-- ~~~~~~~~~~ leftTeamColumn ~~~~~~~ -->
+
+<div class="pbColumn noselect" id="middleColumn">
+  <div class="window" id="statusWindow"><p class='message'>{{draftName}} - {{album}} - {{selectedGod}} - {{phase}} - picks: {{picks}} - pickHistory: {{pickHistory}}</p></div>
+  <div class="window" id="godsWindow">
+    <div class='window' id='filterBox'>
+      <span>Search: </span>
+      <input name='godNameFilter' ng-model='godSearch.name'/>
+      <span>Class: </span>
+      <select name='godClassFilter' ng-model='godSearch.class'>
+        <option value=''>All</option>
+        <option value='assasin'>Assasin</option>
+        <option value='guardian'>Guardian</option>
+        <option value='hunter'>Hunter</option>
+        <option value='mage'>Mage</option>
+        <option value='warrior'>Warrior</option>
+      </select>
+      <input type="checkbox" ng-click="syncBoard()" ng-model="isSynced">Sync</input>
+    </div>
+    <div class="button godBox noselect" ng-repeat="god in gods | filter: godSearch" ng-click='selectGod(god.shortname)' ng-class="{ selected: selectedGod == god.shortname , unavailable: picks.indexOf(god.shortname) > -1 }">
+      <img ng-src='/images/godicons/{{god.shortname}}.png'>
+    </div>
+  </div>
+
+  <div class="noselect window" id="buttonWindow">
+   <div class="btn btn-warning" id="undoButton" ng-click="undo()"><p>Undo</p></div>
+   <div class="btn btn-warning" id="redoButton" ng-click="redo()"><p>Redo</p></div>
+   <div class="btn btn-success" id="lockButton" ng-click='pickGod(selectedGod)'><p>Lock<br>(spacebar)</p></div>
+   <div class="btn btn-danger" id="resetButton" ng-click="resetBoard()"><p>Reset</p></div>
+  </div>
+
+</div>  <!-- ~~~~~~~~~ middle column ~~~~~~~~~~ -->
+
+<div class="pbColumn noselect" id="rightTeamColumn">
+  <div class="window pickBox" id="rightBanBox">
+    <div class="window banIcon rightBanIcon" id="pick1" ng-class="{nextPick: phase == 1}"><img ng-src="images/godicons/{{picks[1]}}.png" ng-show="phase > 1"></div>
+    <div class="window banIcon rightBanIcon" id="pick3" ng-class="{nextPick: phase == 3}"><img ng-src="images/godicons/{{picks[3]}}.png" ng-show="phase > 3"></div>
+    <div class="window banIcon rightBanIcon" id="pick10" ng-class="{nextPick: phase == 10}"><img ng-src="images/godicons/{{picks[10]}}.png" ng-show="phase > 10"></div>
+  </div>
+  <div id="pick5" class="window pickBox rightPickBox" ng-class="{nextPick: phase == 5}"><img ng-src="images/widegodicons/W{{picks[5]}}.png" ng-show="phase > 5"></div>
+  <div id="pick6" class="window pickBox rightPickBox" ng-class="{nextPick: phase == 6}"><img ng-src="images/widegodicons/W{{picks[6]}}.png" ng-show="phase > 6"></div>
+  <div id="pick9" class="window pickBox  rightPickBox" ng-class="{nextPick: phase == 9}"><img ng-src="images/widegodicons/W{{picks[9]}}.png" ng-show="phase > 9"></div>
+  <div id="pick12" class="window pickBox rightPickBox" ng-class="{nextPick: phase == 12}"><img ng-src="images/widegodicons/W{{picks[12]}}.png" ng-show="phase > 12"></div>
+  <div id="pick15" class="window pickBox rightPickBox" ng-class="{nextPick: phase == 15}"><img ng-src="images/widegodicons/W{{picks[15]}}.png" ng-show="phase > 15"></div>
+</div> <!-- ~~~~~~~~~~ RightTeamColumn ~~~~~~~ -->
+
+<div class="pbColumn" id="settingsColumn">
+
+  <div class="window" id="notesWindow">
+    <div class="window" id="notesName"><p>Notes</p></div>
+      <textarea class="window" id="notesInput" placeholder="(Enter notes)" ng-model="notes" ng-change="notesChanged()"></textarea>
+  </div>
+
+  <p class="window" id="collectionName">Album: 
+    <span class="btn btn-success" id="collectionAddButton">Add Album</span>
+  </p>
+  <select id="collectionInput" ng-model='album'>
+    <option ng-repeat="album in albumList" value="{{album}}">{{album}}</option>
+  </select>
+
+  <p class="window" id="draftName">Draft Name: </p>
+  <input id="draftNameInput" type="text" ng-model="draftName" placeholder="Enter draft name"></input>
+
+  <div class ="btn btn-success" id="saveButton" ng-click="saveDraft({title: draftName, picks: picks, notes: notes, album: album})"><p>Save</p></div>
+  <div class ="btn btn-primary" id="loadButton" ng-click="openSaves()"><p>View Saves</p></div>
+</div>
+
+
+
+<div ng-show="bShowSavesWindow" id="viewSavesWindow">
+  <div id="viewSavesHeader">
+    <h1>(press esc to exit)</h1>
+    <select id="albumFilter">
+
+      <option>All</option>
+
+    </select>
+  </div>
+  <ul class="window" id='saveSelectorWindow'>
+    <button class ="btn btn-default" ng-click="closeSaves()">close</button>
+    <li ng-repeat="save in saves track by $index">
+      <div class="saveIcon" id="{{save._id}}" title="{{save.notes}}">
+        <i class="fa fa-trash-o pointer-hover deleteSaveButton" title="Delete draft" ng-click="deleteDraft(save._id)"></i>
+        <p class="saveIconTitle">{{save.title}}</p>
+        <div>
+          <div class="saveIconBans">
+            <img ng-repeat="pick in save.picks" ng-show="$index == 0 || $index == 2 || $index == 11" src="/images/godicons/{{pick}}.png">
+          </div>
+          <div class="saveIconBans" style="float:right">
+            <img ng-repeat="pick in save.picks" ng-show="$index == 1 || $index == 3 || $index == 10" src="/images/godicons/{{pick}}.png">
+          </div>
+        </div>
+
+        <div class="saveIconPicks" id="saveIconPicksLeft">
+          <img ng-repeat="pick in save.picks" ng-show="$index == 4 || $index == 7 || $index == 8 || $index == 13 || $index == 14" src="/images/widegodicons/W{{pick}}.png">
+        </div>
+
+        <div class="saveIconPicks" id="saveIconPicksRight">
+          <img ng-repeat="pick in save.picks" ng-show="$index == 5 || $index == 6 || $index == 9 || $index == 12 || $index == 15" src="/images/widegodicons/W{{pick}}.png">
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</div>
+
