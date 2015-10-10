@@ -12,12 +12,11 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+var socket_io = require('socket.io');
+
 //Load Models
 require('./models/pbSaves');
 require('./models/Users');
-
-var routes = require('./routes/index');
-// var users = require('./routes/users');
 
 //config files
 var db = require('./config/db');
@@ -26,6 +25,15 @@ var db = require('./config/db');
 mongoose.connect(db.url);
 
 var app = express();
+
+// Socket.io
+app.io = socket_io();
+
+var routes = require('./routes/index')(app.io);
+// var users = require('./routes/users');
+
+// Controllers
+var pbController = require('./controllers/pbServerController.js')(app.io);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,3 +1,4 @@
+
 <div class="pbColumn noselect" id="leftTeamColumn">
   <div class="window pickBox" id="leftBanBox">
     <div class="window banIcon leftBanIcon" id="pick0" ng-class="{nextPick: phase == 0}"><img ng-src="images/godicons/{{picks[0]}}.png" ng-show="phase > 0"></div>
@@ -64,16 +65,16 @@
   </div>
 
   <p class="window" id="collectionName">Album: 
-    <span class="btn btn-success" id="collectionAddButton">Add Album</span>
+    <span class="btn btn-success" id="collectionAddButton" ng-click="promptAddAlbum()">Add Album</span>
   </p>
-  <select id="collectionInput" ng-model='album'>
+  <select id="collectionInput" ng-model='currentAlbum'>
     <option ng-repeat="album in albumList" value="{{album}}">{{album}}</option>
   </select>
 
   <p class="window" id="draftName">Draft Name: </p>
   <input id="draftNameInput" type="text" ng-model="draftName" placeholder="Enter draft name"></input>
 
-  <div class ="btn btn-success" id="saveButton" ng-click="saveDraft({title: draftName, picks: picks, notes: notes, album: album})"><p>Save</p></div>
+  <div class ="btn btn-success" id="saveButton" ng-click="saveDraft({title: draftName, picks: picks, notes: notes, album: currentAlbum})"><p>Save</p></div>
   <div class ="btn btn-primary" id="loadButton" ng-click="openSaves()"><p>View Saves</p></div>
 </div>
 
@@ -90,7 +91,7 @@
   </div>
   <ul class="window" id='saveSelectorWindow'>
     <button class ="btn btn-default" ng-click="closeSaves()">close</button>
-    <li ng-repeat="save in saves track by $index">
+    <li ng-repeat="save in saves | orderBy: 'title'">
       <div class="saveIcon" id="{{save._id}}" title="{{save.notes}}">
         <i class="fa fa-trash-o pointer-hover deleteSaveButton" title="Delete draft" ng-click="deleteDraft(save._id)"></i>
         <p class="saveIconTitle">{{save.title}}</p>
@@ -115,4 +116,5 @@
     </li>
   </ul>
 </div>
+
 

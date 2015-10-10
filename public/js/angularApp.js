@@ -36,11 +36,24 @@ app.factory('socketio', ['$rootScope', function($rootScope){
 app.factory('pbSavesService', ['$http', function($http){
 	var x = {
 		saves: [],
+		albums: [],
 		getSaves: function(){
 			return $http.get('/pb/saves')
 			.success(function (data){
 				angular.copy(data, x.saves);
+
+				console.log(x.saves);
 			});
+		},
+		getAlbums: function(data){
+			var albums = [];
+			data.forEach(function(save){
+				if(albums.indexOf(save.album) === -1){
+					albums.push(save.album);
+				}
+			});
+			angular.copy(albums, x.albums);
+			console.log(x.albums);
 		},
 		postSave: function(newSave){
 			return $http.post('/pb/saves', newSave)
@@ -58,9 +71,12 @@ app.factory('pbSavesService', ['$http', function($http){
 
 				x.saves = filteredSaves;
 			});
-		}
+		},
+
 	};
-	x.getSaves();
+	x.getSaves().success(function(){
+		x.getAlbums(x.saves);
+	});
 	return x;
 }]);
 
@@ -100,17 +116,39 @@ app.controller('PbController', ['$scope', '$document', 'godDataService', 'pbSave
 		console.log($scope.gods);
 	});
 	$scope.saves = pbSavesService.saves;
-
+	$scope.albumList = pbSavesService.albums;
 	$scope.picks = [];
 	$scope.pickHistory = [];
 	$scope.phase = 0;
 	$scope.selectedGod = '';
-	$scope.album = "default";
-	$scope.albumList = ["default"];
+	$scope.currentAlbum = "default";
 	$scope.isSynced = true;
 	$scope.bShowSavesWindow = false;
 	
 
+	// $scope.makeAlbumList = function(){
+	// 	$scope.saves.forEach(function(save){
+	// 		if($scope.albumList.indexOf(save.album) === -1){
+	// 			$scope.albumList.push(save.album);
+	// 		}
+	// 	});
+	// };
+
+	
+
+	$scope.addAlbum = function(albumName){
+		if($scope.albumList.indexOf(albumName) == -1){
+			socketio.emit('addAlbum', albumName);
+			console.log("Requesting new album: " + albumName);
+		}
+	};
+
+	$scope.promptAddAlbum = function(){
+		var newAlbum = prompt("New album name:");
+		if(newAlbum){
+			$scope.addAlbum(newAlbum);
+		}
+	};
 	$scope.openSaves = function(){
 		$scope.bShowSavesWindow = true;
 	};
@@ -125,6 +163,14 @@ app.controller('PbController', ['$scope', '$document', 'godDataService', 'pbSave
 		});
 	};
 
+	$scope.loadDraft = function(savedDraft){
+		if($scope.isSynced){
+			socketio.emit('loadDraft', savedDraft._id);
+		}else{
+
+		}
+	};
+
 	$scope.deleteDraft = function(id){
 		pbSavesService.deleteSave(id).success(function(data){
 			console.log(data);
@@ -132,8 +178,15 @@ app.controller('PbController', ['$scope', '$document', 'godDataService', 'pbSave
 		});
 	};
 
+	$scope.setBoard = function(data){
+		$scope.picks = data.picks;
+		$scope.pickHistory = data.pickHistory;
+		$scope.phase = data.phase;
+		$scope.album = data.album;
+		$scope.notes = data.notes
+	};
+
 	socketio.on('sync', function(serverState){
-		$scope.albumList = serverState.albumList;
 		if ($scope.isSynced){
 			$scope.picks = serverState.picks;
 			$scope.pickHistory = serverState.pickHistory;
@@ -141,6 +194,23 @@ app.controller('PbController', ['$scope', '$document', 'godDataService', 'pbSave
 			$scope.album = serverState.album;
 			$scope.notes = serverState.notes;
 		}
+	});
+
+	socketio.on('message', function (message){
+		console.log(message);
+	});
+
+	socketio.on('updateNotes', function(newNotes){
+		$scope.notes = newNotes;
+	});
+
+	socketio.on('updateSaves', function (newSave){
+		pbSavesService.getSaves();
+	});
+
+	socketio.on('updateAlbumList', function (newAlbumList){
+		console.log('Received new album list: ' + newAlbumList);
+		$scope.albumList = newAlbumList;
 	});
 
 
