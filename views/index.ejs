@@ -18,6 +18,7 @@
 	<script src="libs/angular/angular.js"></script>
 	<script src="libs/angular-route/angular-route.js"></script>
 	<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="libs/ng-context-menu/dist/ng-context-menu.js"></script>
 	
 
 	<!-- ANGULAR CUSTOM -->
@@ -42,8 +43,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ng-class="{ active: $route.current.activetab == 'home' }"><a href="/">Home</a></li>
-            <li ng-class="{ active: $route.current.activetab == 'pb' }"><a href="/pb">P&B's</a></li>     
+            <li ng-class="{ active: $route.current.activeTab == 'home' }"><a href="/">Home</a></li>
+            <li ng-class="{ active: $route.current.activeTab == 'pb' }"><a href="/pb">P&B's</a></li>
+            <li ng-class="{ active: $route.current.activeTab == 'test' }"><a href="/test">Test</a></li>
           </ul>
           <ul class="nav navbar-nav nav-pills navbar-right">
             <li><a href="/logout"> Log Out &nbsp;</a></li>

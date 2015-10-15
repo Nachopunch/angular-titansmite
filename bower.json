@@ -21,6 +21,7 @@
     "bootstrap": "latest",
     "font-awesome": "~4.4.0",
     "jquery": "latest",
+    "ng-context-menu": "~1.0.2",
     "socket.io": "~1.3.7"
   }
 }

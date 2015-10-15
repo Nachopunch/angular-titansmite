@@ -30,20 +30,21 @@ var pbServerModule = function (io){
 		console.log("Client connected, new socket issued: "+socket.id);
 		console.log("");
 
-		//=== Initiate board on socket connect ===
-		socket.emit('sync', serverState);
 		// socket.emit('updateAlbumList', serverState.albumList);
 
 		//=== Listen for socket events ===
-		socket.on('clientSync', function(){
+		socket.on('requestSync', function(){
 			socket.emit('sync', serverState);
+		});
+		socket.on('requestInit', function(){
+			console.log("sending Init socketio event");
+			socket.emit('init', serverState);
 		});
 		socket.on('clientLock', recClientLock);
 		socket.on('reset', recClientReset);
 		socket.on('undo', recClientUndo);
 		socket.on('redo', recClientRedo);
 		socket.on('save', saveDraft)
-		socket.on('load', recClientLoad);
 		
 		socket.on('notesChanged', function(newNotes){
 			serverState.notes = newNotes;
@@ -57,26 +58,23 @@ var pbServerModule = function (io){
 				io.emit('updateAlbumList', serverState.albumList);
 			}
 		});
+		socket.on('loadDraft', recClientLoad);
 
 		function recClientLoad(saveID){
+			console.log("Loading save: "+saveID)
 			pbsaves.findOne( {"_id": saveID},  function (err, savedDraft){
 				if(err){
 					throw err;
-					socket.emit('message', err)
+					socket.emit('message', err);
 				} if (savedDraft){
-					console.log(savedDraft);
+					console.log("Loaded draft:" + savedDraft._id + savedDraft.title);
 					serverState.picks = savedDraft.picks;
 					serverState.phase = savedDraft.picks.length;
 					serverState.title = savedDraft.title;
 					serverState.album = savedDraft.album;
 					serverState.notes = savedDraft.notes;
-					io.emit('init', {
-						title: savedDraft.title,
-						picks: savedDraft.picks,
-						notes: savedDraft.notes,
-						album: savedDraft.album,
-						albumList: serverState.albumList
-					});
+					console.log(serverState);
+					io.emit('loadDraft', serverState);
 					io.emit('message', "Loaded draft: "+savedDraft.title);
 				}
 			});
@@ -162,9 +160,10 @@ var pbServerModule = function (io){
 			}
 		}
 	});
-	return {
-		serverState: serverState
-	}
+
+	io.on('disconnect', function(socket){
+		console.log("Client disconnected: "+socket.id);
+	})
 };
 
 
